@@ -375,7 +375,7 @@ static int bcm2708_gpio_probe(struct platform_device *dev)
 		writel(0, ucb->base + GPIOLEN(bank));
 		writel(0, ucb->base + GPIOAREN(bank));
 		writel(0, ucb->base + GPIOAFEN(bank));
-		writel(0, ucb->base + GPIOEDS(bank));
+		writel(~0, ucb->base + GPIOEDS(bank));
 	}
 
 	bcm2708_gpio_irq_init(ucb);
